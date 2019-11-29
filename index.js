@@ -20,8 +20,7 @@ bot.on("message", async message => {
     let cmd = messageArray[0].toLowerCase();
     let args = messageArray.slice(1);
 
-    if(cmd === `${prefix}hello`){
-        return message.channel.send("Hello")
+   
     }
 
     if(cmd === `${prefix}help`){
@@ -130,7 +129,8 @@ bot.on("message", async message => {
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הוספת רול ל**`)
             .setThumbnail(rMember.user.displayAvatarURL)
-            .addField("Role Added By: ", message.member.username)
+             .addField("Member", message.mentions.rMember)
+            .addField("Role Added By: ", message.author.username)
             .addField("Role Added:", role.name)
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
@@ -161,7 +161,8 @@ bot.on("message", async message => {
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הורדת רול ל**`)
             .setThumbnail(rMember.user.displayAvatarURL)
-            .addField("Role Removed By: ", message.member.username)
+            .addField("Member", message.mentions.rMember)
+            .addField("Role Removed By: ", message.author.username)
             .addField("Role Removed:", role.name)
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
