@@ -20,8 +20,6 @@ bot.on("message", async message => {
     let cmd = messageArray[0].toLowerCase();
     let args = messageArray.slice(1);
 
-   
-    }
 
     if(cmd === `${prefix}help`){
         let sEmbed = new Discord.RichEmbed()
