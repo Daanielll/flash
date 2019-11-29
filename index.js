@@ -136,7 +136,15 @@ bot.on("message", async message => {
             sChannel.send({embed: grembed})
             }
          }
-
+        let rrembed = new Discord.embed()
+            .setColor(colours.red)
+            .setTitle(`**${rMember.user.username} הורדת רול ל**`)
+            .setThumbnail(rMember.user.displayAvatarURL)
+            .addField("Role Removed By: ", message.member.username)
+            .addField("Role Removed:", role.name)
+            .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
+            let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
+            
          if(cmd === `${prefix}removerole`){
             if(!message.member.hasPermission(["ADMINISTRATOR"])) return message.reply(" אתה לא יכול להשתמש בפקודה הזאת ")
 
@@ -152,16 +160,7 @@ bot.on("message", async message => {
             } else {
                 await rMember.removeRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} ירד הרול ${rMember.displayName} למשתמש`)
-            
-             let rrembed = new Discord.embed()
-            .setColor(colours.red)
-            .setTitle(`**${rMember.user.username} הורדת רול ל**`)
-            .setThumbnail(rMember.user.displayAvatarURL)
-            .addField("Role Removed By: ", message.member.username)
-            .addField("Role Removed:", role.name)
-            .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
-            let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
-            sChannel.send(rrembed)
+              sChannel.send(rrembed)
              message.channel.send({embed: rrembed});
          }
          }
