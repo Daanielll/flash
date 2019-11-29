@@ -8,8 +8,10 @@ const token = process.env.BOT_TOKEN;
 let cdseconds = 60;
 
 bot.on("ready", () => {
-    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} Servers.`); 
-    bot.user.setActivity(`${bot.users.size} Members In FleshGG's Server`, {type: 'WATCHING'});
+    console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} Servers.`);
+    let myGuild = bot.guilds.get('551449197904265216')
+    let mCount = myGuild.memberCount;
+    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'});
   });
 
 bot.on("message", async message => {
