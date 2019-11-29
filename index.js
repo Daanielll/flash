@@ -125,7 +125,7 @@ bot.on("message", async message => {
                 await rMember.addRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} קיבל את הרול ${rMember.displayName} המשתמש`)
             
-              let grembed = new Discord.embed()
+              let grembed = new Discord.Richembed()
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הוספת רול ל**`)
             .setThumbnail(rMember.user.displayAvatarURL)
@@ -153,7 +153,7 @@ bot.on("message", async message => {
             } else {
                 await rMember.removeRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} ירד הרול ${rMember.displayName} למשתמש`)
-                let rrembed = new Discord.embed()
+                let rrembed = new Discord.Richembed()
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הורדת רול ל**`)
             .setThumbnail(rMember.user.displayAvatarURL)
