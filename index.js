@@ -127,7 +127,7 @@ bot.on("message", async message => {
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הוספת רול ל**`)
             .setThumbnail(rMember.user.displayAvatarURL)
-             .addField("Member", message.mentions.rMember)
+             .addField("Member", `<@${rMember}>`)
             .addField("Role Added By: ", message.author.username)
             .addField("Role Added:", role.name)
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
@@ -159,12 +159,11 @@ bot.on("message", async message => {
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הורדת רול ל**`)
             .setThumbnail(rMember.user.displayAvatarURL)
-            .addField("Member", message.mentions.rMember)
+            .addField("Member", `<@${rMember}>`)
             .addField("Role Removed By: ", message.author.username)
             .addField("Role Removed:", role.name)
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
-              sChannel.send(rrembed)
              message.channel.send({embed: rrembed});
          }
          }
