@@ -125,6 +125,15 @@ bot.on("message", async message => {
                 await rMember.addRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} קיבל את הרול ${rMember.displayName} המשתמש`)
             }
+              let grembed = new Discord.embed()
+            .setColor(colours.red)
+            .setTitle(`**${rMember.user.username} הוספת רול ל**`)
+            .setThumbnail(rMember.user.displayAvatarURL)
+            .addField("Role Added By: ", message.member.username)
+            .addField("Role Added:", role.name)
+            .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
+            let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
+            sChannel.send(grembed)
          }
 
          if(cmd === `${prefix}removerole`){
@@ -143,6 +152,15 @@ bot.on("message", async message => {
                 await rMember.removeRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} ירד הרול ${rMember.displayName} למשתמש`)
             }
+             let rrembed = new Discord.embed()
+            .setColor(colours.red)
+            .setTitle(`**${rMember.user.username} הורדת רול ל**`)
+            .setThumbnail(rMember.user.displayAvatarURL)
+            .addField("Role Removed By: ", message.member.username)
+            .addField("Role Removed:", role.name)
+            .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
+            let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
+            sChannel.send(rrembed)
          }
 })
 
