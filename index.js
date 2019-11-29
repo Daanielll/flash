@@ -133,7 +133,7 @@ bot.on("message", async message => {
             .addField("Role Added:", role.name)
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
-            sChannel.send(grembed)
+            sChannel.send({embed: grembed})
          }
 
          if(cmd === `${prefix}removerole`){
@@ -161,6 +161,7 @@ bot.on("message", async message => {
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
             sChannel.send(rrembed)
+             message.channel.send({embed: rrembed});
          }
 })
 
