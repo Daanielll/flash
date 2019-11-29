@@ -92,7 +92,7 @@ bot.on("message", async message => {
     
     if(cmd === `${prefix}say`)
             {
-        if(!message.member.hasPermission(["ADMINISTRATOR"])) return message.channel.send("** אתה לא יכול להשתמש בפעולה הזאת **")
+        if(!message.member.hasPermission(["ADMINISTRATOR"])) return message.reply("** אתה לא יכול להשתמש בפעולה הזאת **")
 
         let argsresault;
         let mChannel = message.mentions.channels.first()
@@ -124,7 +124,7 @@ bot.on("message", async message => {
             } else {
                 await rMember.addRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} קיבל את הרול ${rMember.displayName} המשתמש`)
-            }
+            
               let grembed = new Discord.embed()
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הוספת רול ל**`)
@@ -134,6 +134,7 @@ bot.on("message", async message => {
             .setFooter(`Date: ${message.createdAt.toLocaleString()}`, bot.user.displayAvatarURL)
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
             sChannel.send({embed: grembed})
+            }
          }
 
          if(cmd === `${prefix}removerole`){
@@ -151,7 +152,7 @@ bot.on("message", async message => {
             } else {
                 await rMember.removeRole(role.id).catch(e => console.log(e.message))
                 message.reply(`.${role.name} ירד הרול ${rMember.displayName} למשתמש`)
-            }
+            
              let rrembed = new Discord.embed()
             .setColor(colours.red)
             .setTitle(`**${rMember.user.username} הורדת רול ל**`)
@@ -162,6 +163,7 @@ bot.on("message", async message => {
             let sChannel = message.guild.channels.find(c => c.name === "（🔷）לוג-רולים")
             sChannel.send(rrembed)
              message.channel.send({embed: rrembed});
+         }
          }
 })
 
