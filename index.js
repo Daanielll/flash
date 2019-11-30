@@ -93,7 +93,7 @@ bot.on("message", async message => {
 
         if (message.mentions.users.first() === bot.user){
         
-        message.channel.send("**Hello **" + message.author + "**\nMy Prefix Is ! \nIf You Nedd Help Type !helpme**")
+        message.channel.send("**Hello **" + message.author + "**\nMy Prefix Is ! \nIf You Need Help Type !helpme**")
         }
     
     if(cmd === `${prefix}form`){
