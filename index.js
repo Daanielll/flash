@@ -96,6 +96,8 @@ bot.on("message", async message => {
     }
     
     if(cmd === `${prefix}membercount`){
+        let myGuild = bot.guilds.get('551449197904265216')
+    let mCount = myGuild.memberCount;
     message.channel.send(`***!יש ${mCount} אנשים בשרת***`)
     
     }
