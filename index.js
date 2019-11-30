@@ -96,7 +96,7 @@ bot.on("message", async message => {
     }
     
     if(cmd === `${prefix}membercount`){
-    message.channel.send(`***!יש ${bot.users.size} אנשים בשרת***`)
+    message.channel.send(`***!יש ${mCount} אנשים בשרת***`)
     
     }
     
