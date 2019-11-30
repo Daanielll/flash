@@ -12,18 +12,42 @@ bot.on("ready", () => {
     let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
     bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
+    let statuses = [
+        `${mCount} Members In FlashGG's Server`,
+        "!help
+        ]
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        bot.user.setActivity(status, {type: "WATCHING"});
+    }, 5000)
   });
 bot.on('guildMemberAdd', member => {
-     let myGuild = bot.guilds.get('551449197904265216')
+      let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'});
-});
+    bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
+    let statuses = [
+        `${mCount} Members In FlashGG's Server`,
+        "!help
+        ]
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        bot.user.setActivity(status, {type: "WATCHING"});
+    }, 5000)
+  });
 
 bot.on('guildMemberRemove', member => {
-     let myGuild = bot.guilds.get('551449197904265216')
+      let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'});
-});
+    bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
+    let statuses = [
+        `${mCount} Members In FlashGG's Server`,
+        "!help
+        ]
+    setInterval(function() {
+        let status = statuses[Math.floor(Math.random() * statuses.length)];
+        bot.user.setActivity(status, {type: "WATCHING"});
+    }, 5000)
+  });
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
