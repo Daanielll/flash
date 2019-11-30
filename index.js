@@ -18,7 +18,7 @@ bot.on("ready", () => {
 bot.on('guildMemberAdd', member => {
      let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'});
+    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'})
     .then(result => console.log(result))
     .cath(error => console.log(error));
 });
@@ -26,7 +26,7 @@ bot.on('guildMemberAdd', member => {
 bot.on('guildMemberRemove', member => {
      let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'});
+    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'})
     .then(result => console.log(result))
     .cath(error => console.log(error));
 });
