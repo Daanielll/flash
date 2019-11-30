@@ -11,7 +11,7 @@ bot.on("ready", () => {
     console.log(`Bot has started, with ${bot.users.size} users, in ${bot.channels.size} channels of ${bot.guilds.size} Servers.`);
     let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-    bot.user.setActivity(`${mCount} Members In FleshGG's Server`, {type: 'WATCHING'});     
+    bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
   });
 bot.on('guildMemberAdd', member => {
      let myGuild = bot.guilds.get('551449197904265216')
