@@ -14,7 +14,7 @@ bot.on("ready", () => {
     bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
     let statuses = [
         `${mCount} Members In FlashGG's Server`,
-        "!help
+        "!help"
         ]
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
@@ -27,7 +27,7 @@ bot.on('guildMemberAdd', member => {
     bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
     let statuses = [
         `${mCount} Members In FlashGG's Server`,
-        "!help
+        "!help"
         ]
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
@@ -41,7 +41,7 @@ bot.on('guildMemberRemove', member => {
     bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
     let statuses = [
         `${mCount} Members In FlashGG's Server`,
-        "!help
+        "!help"
         ]
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
