@@ -87,7 +87,6 @@ bot.on("message", async message => {
         let reason = args.join(' ');
         if(!reason) reason = "None";
         if(cooldown.has(message.author.id)){
-            message.delete();
             return message.reply(" אתה צריך לחכות דקה אחרי בקשת עזרה ")
         } else{
             message.channel.send(`**${srole}, **` + message.author + `** Needs Your Help! \nReason: ${reason}**`)
