@@ -72,7 +72,7 @@ bot.on("message", async message => {
 
         if (message.mentions.users.first() === bot.user){
         
-        message.channel.send("**Hello **" + message.author + "**\nMy Prefix Is ! \nIf You Need Help Type !helpme**")
+        message.channel.send(`Hey **${message.author.username}**, my prefix is ! \nIf you need help type !help`)
         }
     
     if(cmd === `${prefix}form`){
@@ -100,7 +100,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}membercount`){
         let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-    message.channel.send(`**!יש ${mCount} אנשים בשרת**`)
+    message.channel.send(`!יש **${mCount}** אנשים בשרת`)
     
     }
     
