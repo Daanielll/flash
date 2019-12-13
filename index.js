@@ -24,7 +24,7 @@ bot.on('guildMemberAdd', member => {
 bot.on('guildMemberRemove', member => {
       let myGuild = bot.guilds.get('551449197904265216')
     let mCount = myGuild.memberCount;
-   bot.user.setActivity(`${mCount} Members In FlashGG's Server`, {type: 'WATCHING'});     
+   bot.user.setActivity(`${mCount} Members in FlashGG's server`, {type: 'WATCHING'});     
   
   });
 
@@ -89,7 +89,7 @@ bot.on("message", async message => {
         if(cooldown.has(message.author.id)){
             return message.reply(" אתה צריך לחכות דקה אחרי בקשת עזרה ")
         } else{
-            message.channel.send(`**${srole}, **` + message.author + `** Needs Your Help! \nReason: ${reason}**`)
+            message.channel.send(`**${srole}, ${message.author.username}** needs your help! \nReason: **${reason}**`)
             cooldown.add(message.author.id);
         }
         setTimeout(() =>{
