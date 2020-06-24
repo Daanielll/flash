@@ -4,6 +4,7 @@ const colours = require("./colours.json");
 const { Client, Collection } = require("discord.js");
 const { RichEmbed } = require("discord.js")
 const bot = new Discord.Client({disableEveryOne: true});
+const token = process.env.BOT_TOKEN;
 let srole = "<@&619515952928784393>"
 let cooldown = new Set();
 let cdseconds = 60;
@@ -39,6 +40,6 @@ bot.on('guildMemberAdd', member => {
         
 })
 
-bot.login('NzI1NDQzMTU0NDUwMzE3MzQ0.XvPBDg.JvkF49Oi4l3-9NOQJGvYPVNwdXs');
+bot.login(token);
 
 
